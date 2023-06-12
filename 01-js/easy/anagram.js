@@ -8,7 +8,29 @@
 */
 
 function isAnagram(str1, str2) {
-
+   let frqarr=[];
+  for(let i=0;i<26;i++)
+  {
+    frqarr.push(0);
+  }
+  for(let i=0;i<str1.length;i++)
+  {
+    let k=charCodeAt(str1.charAt(i));
+    frqarr[k]++;
+  }
+  for(let i=0;i<str2.length;i++)
+  {
+    let k=charCodeAt(str2.charAt(i));
+    frqarr[k]--;
+  }
+  for(let i=0;i<26;i++)
+  {
+    if(frqarr[i]!=0)
+    {
+      return false;
+    }
+  }
+  return true;
 }
 
 module.exports = isAnagram;
