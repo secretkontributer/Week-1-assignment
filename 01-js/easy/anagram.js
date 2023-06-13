@@ -8,6 +8,12 @@
 */
 
 function isAnagram(str1, str2) {
+   str1=str1.split("").sort().join(""); //noice method to sort a string in javascript;
+  str2=str2.split("").sort().join("");
+  if(str1==str2)
+  return true;
+  else
+  return false;
 
 }
 
